@@ -2,20 +2,16 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 
 const AddCoffee = () => {
-  // const [image, setImage] = useState(null);
   const [loader, setLoader] = useState(false);
   const [imageURL, setImageURL] = useState("");
   const [show, setShow] = useState(false);
 
-  // const addImage = (image) => {
-  //   setImage(image);
-  // };
+
 
   const apiKey = import.meta.env.VITE_IMGBB_KEY;
   const handleImage = (e) => {
     e.preventDefault();
     const image = e.target.files[0];
-    // addImage(image);
     setLoader(true);
     setShow(false);
     const formData = new FormData();
