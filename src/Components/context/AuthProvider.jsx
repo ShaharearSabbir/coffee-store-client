@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import {
   createUserWithEmailAndPassword,
+  deleteUser,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
@@ -22,6 +23,13 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     return signOut(auth);
   };
+
+
+  const deleteUSer = () => {
+    
+    return deleteUser()
+  }
+
 
   useEffect(() => {
     const unSubs = onAuthStateChanged(auth, (currentUser) => {

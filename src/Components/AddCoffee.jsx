@@ -6,8 +6,6 @@ const AddCoffee = () => {
   const [imageURL, setImageURL] = useState("");
   const [show, setShow] = useState(false);
 
-
-
   const apiKey = import.meta.env.VITE_IMGBB_KEY;
   const handleImage = (e) => {
     e.preventDefault();
@@ -46,7 +44,7 @@ const AddCoffee = () => {
     delete newCoffee.imageFile;
     newCoffee.imageURL = imageURL;
 
-    fetch("http://localhost:5000/coffees", {
+    fetch("https://coffee-store-server-xi-ten.vercel.app/coffees", {
       method: "POST",
       headers: {
         "content-type": "application/json",

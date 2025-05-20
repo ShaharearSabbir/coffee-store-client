@@ -37,8 +37,6 @@ const Signup = () => {
       });
   };
 
-
-  
   const handleSignup = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -52,7 +50,7 @@ const Signup = () => {
     createUser(email, password)
       .then((userInfo) => {
         userProfile.uid = userInfo.user.uid;
-        fetch("http://localhost:5000/users", {
+        fetch("https://coffee-store-server-xi-ten.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -71,6 +69,8 @@ const Signup = () => {
                 timer: 1500,
               });
             }
+            form.reset();
+            setShow(false);
           });
       })
       .catch((err) => {
